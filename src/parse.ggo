@@ -1,0 +1,16 @@
+
+package "qtp"
+purpose "QTP (Qlang Template Preprocessor).\n  [ This tool is part of QPLATFORM project. ]\n\n  Copyright (c) 2003,2004,2006,2007  ainmarh labs"
+option "source" s "source filename (*.q) for processing" string yes
+option "out" o "project name (default source filename before dot)" string no
+option "out-c" c "result filename (*.c)" string no
+option "out-h" r "result header filename (*.h)" string no
+option "file" f "internal file for writing cached output" string no multiple
+option "prefix" p "function prefix (like qtp_)" string default="" no
+option "include" i "include .h file in template" string no multiple
+option "contentlength" l "Insert 'Content-Length:' tag" no
+option "nostd" n "no std output from Q-Lang cgi daemon" no
+option "nocgix" - "No CGIX support enabled" no
+option "userarg" u "Enable passing of user argument" no
+option "extended" x "Use <!--- (three minus) as delimiter" no
+option "module" m "Include QUERY-module in source" no

@@ -1,0 +1,163 @@
+2006-09-11  qtp 1.4.0 (STABLE!)
+
+	* ALL: Stabilized (really 1.3.8)
+
+2006-06-23  qtp 1.3.8 (unstable)
+
+	* QTP: Added qtp-make utilite.
+
+2006-06-22  qtp 1.3.7 (unstable)
+
+	* dialect 2.1: added some QTL parts - qtl_tailq.h qtl_mysql.h.
+
+2006-06-19  qtp 1.3.6 (unstable)
+
+	* Core: Fixed some bugs in parser.
+
+2006-06-06  qtp 1.3.5 (unstable)
+
+	* Fix: amd64 (x86_64) problems fixed.
+
+2004-11-24  qtp 1.3.4 (unstable)
+
+	* Fix: Rename strlcpy & strlcat to str1cpy & str1cat
+	       for compat with BSD systems
+
+2004-09-15  qtp 1.3.3 (unstable)
+
+	* Fix: Bug in QTP
+	* dialect 2.1: added {elif <expression>} construction
+
+2004-08-20  qtp 1.3.1 (unstable)
+
+	* Fix: Bug in QSM fixed.
+
+2004-06-29  qtp 1.3.0 (unstable)
+
+	* Version: New version numeration accepted. (X.X.X instead X.XrX)
+	           [BRANCH].[VERSION].[RELEASE] (RELEASE started from 0)
+	* Version: x.(odd).x - stable; x.(!odd).x - unstable
+	* dialect: 2.1 development started.
+	* dialect 2.1: added support for QSM (session manager)
+	* Core: Some changes.
+	* QSM: Implemented and now full working.
+	* QCM: Some changes
+	* Distribution: CGIX intergrated into qtp distribution.
+	* API: Added fake option -m --module to qtp.
+	* API: Added 'loop' as alias for 'proc'.
+	* API: Fix problem with "\n" at end of headers (newer add this later)
+	* Usability: DON'T USE FOR STABLE DEVELOPMENT!!! ONLY FOR TESTS!!!
+
+2004-05-03  qtp 1.2r3 (bugfix, extend release)
+
+	* Core: Fixed bug with comments in .q template.
+	* Core: Added support for GNU/Linux sendfile
+
+2004-03-25  qtp 1.2r2 (extend release)
+
+	* API: Added support for comments in .q template.
+
+2004-03-24  qtp 1.2 (stable release)
+
+	* Core: Some bugfixes.
+	* Core: Some parts of QCM rewritten.
+	* Core: Stabilization of code.
+	* Core: Warning! Security fix!
+	* Source: Indent :)
+
+2004-02-14  qtp 1.1pre9 (unstable)
+
+	* Core: Some bugfixes.
+	* Core: Finish testing QCM.
+	* API: Added -u (userarg) option to preprocessor.
+
+2004-03-05  qtp 1.1pre2-8 (unstable)
+
+	* Core/API: Big work.
+
+2004-01-05  qtp 1.1pre1 (unstable)
+
+	* Core: Added support for 'Content-Length'
+	* Core: Started QCM (QTP Cache Manager)
+	* API: Added some features
+	* dialect: 2.0/2.1 support.
+
+2003-12-09  qtp 1.0 (stable release)
+
+	* Core: Internal buffers increased.
+
+2003-12-08  qtp 1.0rc3
+
+	* Core: Internal buffer changed from 4096 to 60000.
+
+2003-12-05  qtp 1.0rc2
+
+	* Core: Added <!-- intern <name>; -->
+	* dialect: 2.0 functional extended.
+
+2003-11-27  qtp 1.0rc1
+
+	* Core: Removed "TMPL_" prefix.
+	* Core: All internal operators lowercased.
+	* Core: Added <!-- extern <name>; -->
+	* dialect: 1.1 into 2.0 functional converted with changes.
+
+2003-10-18  qlang (build 49)
+
+	* Core: Added {TMPL_INCLUDE} support (untested!).
+	* dialect: 1.1 functional finished.
+
+2003-10-09  qlang (build 48)
+
+	* Core: Big changes in dialect 1.1 parser/processor.
+	* Core: Fixed bug with "{}" definitions at start and end (dialect 1.1).
+
+2003-09-29  qlang (build 47)
+
+	* Core: Remove /#include "qinclude.h"/ from dialect.
+	* dialect: Standart of dialect version 1.1 are accepted.
+
+2003-09-24  qlang (build 46)
+
+	* Core: Add switch 1.0/1.1 dialects.
+	* Core: Add new parser. (dialect 1.1)
+	* API: Support dialect version 1.1
+	* Interface: Add -1 (--pr11) option (enable dialect 1.1)
+	* Interface: Add --pr11inc option (change 1.1 include file)
+
+2003-09-06  qlang (build 45)
+
+	* Core: Add fast template write model.
+	* Interface: Add --nofast option(disable use new template write model).
+
+2003-09-03  qlang (build 44)
+
+	* Core: Add file caching support.
+	* Interface: Add -f (--file) option.
+	* Interface: Add --nostd option.
+
+2003-09-01  qlang (build 43)
+
+	* Interface: Cosmetic changes.
+
+2003-08-24  qlang (build 42)
+
+	* Core: Bugfixes. 
+
+2003-08-18  qlang (build 41)
+
+	* Core: Bugfixes. 
+
+2003-08-15  qlang (build 40)
+
+	* Interface: Use getopt for parsing command-line options.
+
+2003-08-04  qlang (build 39)
+
+	* Core: Experimantal (not published) 
+
+2003-07-29  qlang (build 38)
+
+	* License: Published undel GPL license.
+	* API: Support dialect version 1.0
+	* Core: Old template writing model.

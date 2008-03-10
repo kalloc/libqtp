@@ -1,0 +1,66 @@
+dnl Process this file with autoconf to produce a configure script.
+
+AC_DEFINE([PACKAGE_SOURCE_DIR],[],[Source dir])
+AC_DEFINE([PACKAGE_LOCALE_DIR],[],[Package Locale DIR])
+AC_DEFINE([PACKAGE_DATA_DIR],[],[Data dir])
+AC_DEFINE([OS_NAME],[],[Operating System Name])
+
+AC_INIT(configure.in)
+AM_INIT_AUTOMAKE(qtp, 1.4.4)
+AM_CONFIG_HEADER(config.h)
+eval LIBTOOL_VERSION_INFO="1:0:0"
+
+AC_ISC_POSIX
+AC_PROG_CC
+AM_PROG_CC_STDC
+AC_HEADER_STDC
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
+
+dnl Add the languages which your application supports here.
+
+AC_SUBST(LIBTOOL_VERSION_INFO)
+
+dnl Checks for libraries.
+AC_CHECK_HEADER(sys/sendfile.h,AC_DEFINE([LINUX_SENDFILE],[],[Use LINUX/GNU sendfile]))
+
+dnl Set PACKAGE_LOCALE_DIR in config.h.
+
+AC_DEFINE_UNQUOTED(OS_NAME, "`uname -sr`")
+
+if test "x${prefix}" = "xNONE"; then
+  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${ac_default_prefix}/${DATADIRNAME}/locale")
+else
+  AC_DEFINE_UNQUOTED(PACKAGE_LOCALE_DIR, "${prefix}/${DATADIRNAME}/locale")
+fi
+
+dnl Set PACKAGE_DATA_DIR in config.h.
+
+if test "x${datadir}" = 'x${prefix}/share'; then
+  if test "x${prefix}" = "xNONE"; then
+    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${ac_default_prefix}/share/${PACKAGE}")
+  else
+    AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${prefix}/share/${PACKAGE}")
+  fi
+else
+  AC_DEFINE_UNQUOTED(PACKAGE_DATA_DIR, "${datadir}/${PACKAGE}")
+fi
+
+dnl Set PACKAGE_SOURCE_DIR in config.h.
+packagesrcdir=`cd $srcdir && pwd`
+AC_DEFINE_UNQUOTED(PACKAGE_SOURCE_DIR, "${packagesrcdir}")
+
+dnl Use -Wall if we have gcc.
+changequote(,)dnl
+if test "x$GCC" = "xyes"; then
+  case " $CFLAGS " in
+  *[\ \	]-Wall[\ \	]*) ;;
+  *) CFLAGS="$CFLAGS -Wall" ;;
+  esac
+fi
+changequote([,])dnl
+
+AC_OUTPUT([
+Makefile
+src/Makefile
+])
